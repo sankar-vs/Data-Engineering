@@ -1,2 +1,3 @@
 ## Python Practice
-### Base Python Programs
+### Basic Python Programs
+### Functional Programs

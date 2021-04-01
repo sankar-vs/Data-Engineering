@@ -10,7 +10,7 @@ def test_positive_integer(x):
     Description:
         Check if the given number is greater than 0
     Parameter:
-        x (int)): A integer
+        x (str): Input from User
     Return:
         x (int)): returns if value is greater than 0
     '''    

@@ -27,7 +27,7 @@ def test_greater_than_4(x):
     Description:
         Check if the given number is greater than 4
     Parameter:
-        x (int)): A integer
+        x (str): Input from User
     Return:
         x (int)): returns if value is greater than 4
     '''    

@@ -6,35 +6,27 @@
 @Title : FlipCoin
 '''
 import random
-def test_positive_integer(x):
+import re
+def num_regex():
     '''
     Description:
-        Check if the given number is greater than 0
-    Parameter:
-        x (str): Input from User
-    Return:
-        x (int)): returns if value is greater than 0
-    '''   
-    if int(x) > 0:
-        return int(x)  
-    else:
-        print("Enter number greater that zero")
-
-def get_input():
-    '''
-    Description:
-        Get input from the User
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then print return
     Parameter:
         None
     Return:
-        num (int)): returns input from the user
-    '''   
+        num (int): input from user
+    '''
     while True:
         try:
-            num = test_positive_integer(input("Enter a number: "))
-            return num
-        except ValueError:
-            print("Oops!  That was no valid number.  Try again...")
+            num = input("Enter a number: ")
+            pattern = "^([1-9][0-9]{,8})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numerics greater than 0")
 
 def calculate_perc_of_heads_and_tails(numberOfFlips):
     '''
@@ -53,8 +45,8 @@ def calculate_perc_of_heads_and_tails(numberOfFlips):
                 countHeads +=  1
             else:
                 countTails +=  1
-        print("Percentage of Heads: {}% \n Percentage of Tails: {}%".format((countHeads/numberOfFlips)*100, (countTails/numberOfFlips)*100))
-    except TypeError:
+        print("Percentage of Heads: {}% \nPercentage of Tails: {}%".format((countHeads/numberOfFlips)*100, (countTails/numberOfFlips)*100))
+    except:
         print("Check input")
         
-calculate_perc_of_heads_and_tails(get_input())
+calculate_perc_of_heads_and_tails(num_regex())

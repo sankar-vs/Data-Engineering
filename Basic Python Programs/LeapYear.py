@@ -2,38 +2,30 @@
 @Author: Sankar
 @Date: 2021-03-31 19:06:25
 @Last Modified by: Sankar
-@Last Modified time: 2021-04-01 00:45:09
+@Last Modified time: 2021-04-02 11:34:09
 @Title : HarmonicNumber
 '''
-def test_four_digit_number(x):
+import re
+def num_regex():
     '''
     Description:
-        Check if the given number is a four digit number
-    Parameter:
-        x (str): Input from User
-    Return:
-        x (int)): returns if length = 4 and if value is greater than 0
-    '''        
-    if (len(x) == 4 and int(x) > 0): 
-        return int(x)  
-    else:
-        print("Enter a 4 digit number")
-
-def get_input():
-    '''
-    Description:
-        Get input from the User
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
     Parameter:
         None
     Return:
-        year (int)): returns input from the user
-    '''   
+        num (int): input from user
+    '''
     while True:
         try:
-            year = test_four_digit_number(input("Enter year: "))
-            return year
-        except ValueError:
-            print("Oops!  That was no valid number.  Try again...")
+            num = input("Enter year: ")
+            pattern = "^([1-9][0-9]{3})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Enter year of 4 digits")
 
 def leap_year(year):
     '''
@@ -52,4 +44,4 @@ def leap_year(year):
     except TypeError:
         print("Check input")
 
-leap_year(get_input())
+leap_year(num_regex())

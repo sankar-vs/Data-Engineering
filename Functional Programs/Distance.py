@@ -19,7 +19,7 @@ def num_regex_int(x):
     while True:
         try:
             num = input(x)
-            pattern = "^([+-]?[0-9]{,9})$"
+            pattern = "^([+-]?[0-9]{,8})$"
             result = re.match(pattern, num)
             if (result):
                 return int(num)

@@ -2,23 +2,32 @@
 @Author: Sankar
 @Date: 2021-04-01 15:35:20
 @Last Modified by: Sankar
-@Last Modified time: 2021-04-01 19:16:38
+@Last Modified time: 2021-04-02 11:59:38
 @Title : CrossGame
 '''
 import random
 import sys
-
-def test_index_position(x):
+import re
+def num_regex(x):
+    '''
+    Description:
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
+    Parameter:
+        x (str) : Statement to be printed to take the the inputs from user
+    Return:
+        num (int): input from user
+    '''
     while True:
         try:
-            if (int(x) >= 0 and int(x) <3):
-                return int(x)
-            else:
-                print("Enter Proper Position")
-                break    
-        except ValueError:
-            print("Oops!  That was no valid number.  Try again...")
-            break
+            num = input(x)
+            pattern = "^([0-2])$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numerics greater than 0")
 
 def check_status(board, element):
     '''
@@ -35,14 +44,17 @@ def check_status(board, element):
         element (str): 'X' or 'O' if winning conditions are true
         3 (int): returns integer value 3 if  winning conditions are false
     '''
-    for i in range(3):
-        if ((board[i][0] == element and board[i][1] == element and board[i][2] == element) or 
-                (board[0][i] == element and board[1][i] == element and board[2][i] == element)):
+    try:
+        for i in range(3):
+            if ((board[i][0] == element and board[i][1] == element and board[i][2] == element) or 
+                    (board[0][i] == element and board[1][i] == element and board[2][i] == element)):
+                return element
+        if ((board[0][0] == element and board[1][1] == element and board[2][2] == element) or
+                (board[0][2] == element and board[1][1] == element and board[2][0] == element)):
             return element
-    if ((board[0][0] == element and board[1][1] == element and board[2][2] == element) or
-            (board[0][2] == element and board[1][1] == element and board[2][0] == element)):
-        return element
-    return 3
+        return 3
+    except:
+        pass
 
 def display_board(board, count):
     '''
@@ -86,19 +98,18 @@ def player_play(element, board):
     Return:
         board (list[][]): After the player has played his move
     '''
-    while True:
-        try:
-            print("Enter player2 position to play: ")
-            row = test_index_position(input("Enter row(0-2): "))
-            column = test_index_position(input("Enter column(0-2): "))
-            if (board[row][column] == ' '):
-                board[row][column] = element
-                break
-            else:
-                print("The field is not empty Please five a new position")
-        except TypeError:
-            print("Please check the inputs to row and column")
-    return board
+    try:
+        print("Enter player2 position to play: ")
+        row = num_regex("Enter row(0-2): ")
+        column = num_regex("Enter column(0-2): ")
+        if (board[row][column] == ' '):
+            board[row][column] = element
+        else:
+            print("The field is not empty Please five a new position")
+        return board
+    except:
+        pass
+    print("Please check the inputs to row and column")
 
 def computer_play(element, board):
     '''
@@ -116,13 +127,16 @@ def computer_play(element, board):
     Return:
         board (list[][]): After the computer has played its move
     '''
-    row = random.randint(0,2)
-    column = random.randint(0,2)
-    if (board[row][column] != " "):
-        computer_play(element, board)
-    if (board[row][column] == " "):
-        board[row][column] = element
-    return board
+    try:
+        row = random.randint(0,2)
+        column = random.randint(0,2)
+        if (board[row][column] != " "):
+            computer_play(element, board)
+        if (board[row][column] == " "):
+            board[row][column] = element
+        return board
+    except:
+        pass
 
 def print_winOrDraw(board, element, count):
     '''
@@ -137,14 +151,17 @@ def print_winOrDraw(board, element, count):
         None
         Exits if the Condition is met
     '''
-    result = check_status(board, element)
-    if (result == element):
-        display_board(board, count)
-        print("{} Won".format(element))
-        sys.exit()
-    if (result == 3 and count == 9):
-        display_board(board, count)
-        sys.exit("The game is a Tie")
+    try:
+        result = check_status(board, element)
+        if (result == element):
+            display_board(board, count)
+            print("{} Won".format(element))
+            sys.exit()
+        if (result == 3 and count == 9):
+            display_board(board, count)
+            sys.exit("The game is a Tie")
+    except:
+        pass
 
 def play_game():
     '''
@@ -158,17 +175,21 @@ def play_game():
     Return:
         None
     '''
-    count = 0
-    board = [[' ' for i in range(3)] for j in range(3)]
-    display_board(board, count)
-    while(count < 9):
-        count += 1
-        board = player_play('X',board)
+    try:
+        count = 0
+        board = [[' ' for i in range(3)] for j in range(3)]
         display_board(board, count)
-        print_winOrDraw(board, 'X', count)
-        count += 1
-        board = computer_play('O',board)
-        display_board(board, count)
-        print_winOrDraw(board, 'O', count)
+        while(count < 9):
+            count += 1
+            board = player_play('X',board)
+            display_board(board, count)
+            print_winOrDraw(board, 'X', count)
+            count += 1
+            board = computer_play('O',board)
+            display_board(board, count)
+            print_winOrDraw(board, 'O', count)
+    except:
+        pass
+    raise Exception("Program stopped... Please restart")
 
 play_game()

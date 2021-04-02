@@ -6,52 +6,54 @@
 @Title : CoupanNumbers
 '''
 import random
-def test_not_zero(x):
+import re
+def num_regex():
     '''
     Description:
-        Check if the given number is greater than 0
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
     Parameter:
-        x (int)): A integer
+        None
     Return:
-        x (int)): return if value is greater than 0
-    '''    
-    if int(x) > 0: 
-        return int(x)  
-    else:
-        print("Enter number greater that zero")
+        num (int): input from user
+    '''
+    while True:
+        try:
+            num = input("Enter number of Distinct Coupans: ")
+            pattern = "^([1-9][0-9]{,8})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numerics greater than 0") 
 
-# To generate random numbers
-def distinct_Coupan_Generator(num):
+def distinct_coupan_generator(num):
     '''
     Description:
         Generate random number and to process distinct coupons
     Parameter:
-        num (int)): A integer
+        num (int)): input from user
     Return:
         None
     ''' 
-    array = []
-    count = i = 0
-    while (i < (num+count)):
-        rand = random.randint(1, num)
-        i += 1
-        if (len(array) == 0):
-            array.append(rand)
-        else:
-            exists = rand in array
-            if (exists):
-                count += 1
-                continue
-            else:
-                array.append(rand)
-    print(array)            
-
-# Get input from user until a integer is recieved
-while True:
     try:
-        numOfCoupans = test_not_zero(input("Enter number of Distinct Coupans: "))
-        break
-    except ValueError:
-        print("Oops!  That was no valid number.  Try again...")
+        array = []
+        count = i = 0
+        while (i < (num+count)):
+            rand = random.randint(1, num)
+            i += 1
+            if (len(array) == 0):
+                array.append(rand)
+            else:
+                exists = rand in array
+                if (exists):
+                    count += 1
+                    continue
+                else:
+                    array.append(rand)
+        print(array)   
+    except:
+        print("Check Input")         
 
-distinct_Coupan_Generator(numOfCoupans)
+distinct_coupan_generator(num_regex())

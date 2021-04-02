@@ -14,7 +14,7 @@ def num_regex():
     Parameter:
         None
     Return:
-        None
+        num (int): input from user
     '''
     while True:
         try:

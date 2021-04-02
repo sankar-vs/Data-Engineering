@@ -5,35 +5,27 @@
 @Last Modified time: 2021-04-01 00:18:09
 @Title : HarmonicNumber
 '''
-def test_positive_integer(x):
+import re
+def num_regex():
     '''
     Description:
-        Check if the given number is greater than 0
-    Parameter:
-        x (str): Input from User
-    Return:
-        x (int)): returns if value is greater than 0
-    '''   
-    if int(x) > 0:
-        return int(x)  
-    else:
-        print("Enter number greater that zero")
-
-def get_input():
-    '''
-    Description:
-        Get input from the User
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then print return
     Parameter:
         None
     Return:
-        num (int)): returns input from the user
-    '''   
+        num (int): input from user
+    '''
     while True:
         try:
-            num = test_positive_integer(input("Enter a number: "))
-            return num
-        except ValueError:
-            print("Oops!  That was no valid number.  Try again...")
+            num = input("Enter a number: ")
+            pattern = "^([1-9][0-9]{,8})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numerics greater than 0")  
 
 def calculate_harmonic(num):
     '''
@@ -50,7 +42,7 @@ def calculate_harmonic(num):
             div = (1/count)
             harmonic += div
         print("The {}th Harmonic number: {}".format(num, harmonic))
-    except TypeError:
+    except:
         print("Check input")    
 
-calculate_harmonic(get_input())
+calculate_harmonic(num_regex())

@@ -19,7 +19,7 @@ def num_regex():
     while True:
         try:
             num = input("Enter a number: ")
-            pattern = "([1-9]|[12][0-9]|30)$"
+            pattern = "^([1-9]|[12][0-9]|30)$"
             result = re.match(pattern, num)
             if (result):
                 return int(num)

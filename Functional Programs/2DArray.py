@@ -2,22 +2,51 @@
 @Author: Sankar
 @Date: 2021-04-01 09:06:25
 @Last Modified by: Sankar
-@Last Modified time: 2021-04-01 20:34:09
+@Last Modified time: 2021-04-02 12:16:09
 @Title : 2DArray
 '''
-def test_positive_integer(x):
+import re
+def num_regex(x):
     '''
     Description:
-        Check if the given number is greater than 0
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
     Parameter:
-        x (str): Input from User
+        x (str) : Statement to be printed to take the the inputs from user
     Return:
-        x (int)): returns if value is greater than 0
-    '''    
-    if int(x) > 0: 
-        return int(x)  
-    else:
-        print("Enter number greater that zero")
+        num (int): input from user
+    '''
+    while True:
+        try:
+            num = input(x)
+            pattern = "^([1-9][0-9]{,8})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numerics greater than 0")
+
+def num_regex_int(x):
+    '''
+    Description:
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
+    Parameter:
+        x (str) : Statement to be printed to take the the inputs from user
+    Return:
+        num (int): input from user
+    '''
+    while True:
+        try:
+            num = input(x)
+            pattern = "^([+-]?[0-9]{,9})$"
+            result = re.match(pattern, num)
+            if (result):
+                return int(num)
+        except:
+            pass
+        print("Only numeric integer")
 
 def create_matrix(rows, columns):
     '''
@@ -34,10 +63,10 @@ def create_matrix(rows, columns):
         for i in range(rows):
             a = []
             for j in range(columns):
-                a.append(int(input("Enter element: ")))
+                a.append(num_regex_int("Enter element: "))
             matrix.append(a)    
         return matrix
-    except TypeError:
+    except:
         print("Check the values for rows and columns")  
 
 def print_matrix(matrix):
@@ -56,16 +85,10 @@ def print_matrix(matrix):
             for j in range(columns):
                 print(matrix[i][j], end = " ")
             print()
-    except TypeError:
+    except:
         print("Check the values for rows and columns")
 
-while True:
-    try:
-        row = test_positive_integer(input("Enter number of rows: "))
-        column = test_positive_integer(input("Enter number of columns: "))
-        break
-    except ValueError:
-        print("Oops!  That was no valid number.  Try again...")
-
+row = num_regex("Enter number of rows: ")
+column = num_regex("Enter number of columns: ")
 array = create_matrix(row, column)  
 print_matrix(array)

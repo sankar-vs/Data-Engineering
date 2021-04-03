@@ -1,2 +1,2 @@
 ## Python Practice
-### Logical Programs
+### Pytest Programs

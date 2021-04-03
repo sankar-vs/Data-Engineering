@@ -2,10 +2,12 @@
 @Author: Sankar
 @Date: 2021-04-03 07:32:25
 @Last Modified by: Sankar
-@Last Modified time: 2021-04-03 07:33:09
+@Last Modified time: 2021-04-03 08:38:09
 @Title : Day of Week
 '''
+import logging
 import re
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
 def num_regex_day():
     '''
     Description:
@@ -25,7 +27,7 @@ def num_regex_day():
                 return int(num)
         except:
             pass
-        print("Days are from 1 to 31")
+        logging.warning("Days are from 1 to 31")
 
 def num_regex_month():
     '''
@@ -46,7 +48,7 @@ def num_regex_month():
                 return int(num)
         except:
             pass
-        print("Months are from 1 to 12")
+        logging.warning("Months are from 1 to 12")
 
 def num_regex_year():
     '''
@@ -67,7 +69,7 @@ def num_regex_year():
                 return int(num)
         except:
             pass
-        print("Enter year of 4 digits")
+        logging.warning("Enter year of 4 digits")
 
 def get_input():
     '''
@@ -78,12 +80,16 @@ def get_input():
     Return:
         list (list): input from user
     '''
-    list = []
-    list.append(num_regex_day())
-    list.append(num_regex_month())
-    list.append(num_regex_year())
-    print(list)
-    return list
+    try:
+        list = []
+        list.append(num_regex_day())
+        list.append(num_regex_month())
+        list.append(num_regex_year())
+        print(list)
+        return list
+    except:
+        pass
+    logging.error("Check the inputs")
 
 def gregorian_calender(list):
     '''
@@ -98,14 +104,18 @@ def gregorian_calender(list):
     Return:
         None
     '''
-    day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    d = list[0]
-    m = list[1]
-    y = list[2]
-    y0 = y - ((14-m)//12)
-    x = y0 + (y0//4) - (y0//100) + (y0//400)
-    m0 =  m + 12 * ((14- m) // 12) - 2
-    d0 = (d + x + 30 * m0//12) % 7
-    print("The day is: {}".format(day[d0]))
+    try:
+        day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+        d = list[0]
+        m = list[1]
+        y = list[2]
+        y0 = y - ((14-m)//12)
+        x = y0 + (y0//4) - (y0//100) + (y0//400)
+        m0 =  m + 12 * ((14- m) // 12) - 2
+        d0 = (d + x + 30 * m0//12) % 7
+        return day[d0]
+    except:
+        pass
+    logging.error("Check the calculation of day")
 
-gregorian_calender(get_input())
+print("The day is: {}".format(gregorian_calender(get_input())))

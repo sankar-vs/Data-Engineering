@@ -5,9 +5,10 @@
 @Last Modified time: 2021-04-03 08:38:09
 @Title : Day of Week
 '''
+import pytest
 import logging
 import re
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 def num_regex_day():
     '''
     Description:
@@ -82,6 +83,7 @@ def get_input():
     '''
     try:
         list = []
+        logging.info("Getting Inputs")
         list.append(num_regex_day())
         list.append(num_regex_month())
         list.append(num_regex_year())
@@ -105,6 +107,7 @@ def gregorian_calender(list):
         None
     '''
     try:
+        logging.info("Calculation start")
         day = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
         d = list[0]
         m = list[1]
@@ -115,7 +118,7 @@ def gregorian_calender(list):
         d0 = (d + x + 30 * m0//12) % 7
         return day[d0]
     except:
-        pass
-    logging.error("Check the calculation of day")
+        logging.error("Check the calculation of day")
+    
 
 print("The day is: {}".format(gregorian_calender(get_input())))

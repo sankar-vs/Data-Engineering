@@ -5,6 +5,7 @@
 @Last Modified time: 2021-04-03 09:42:09
 @Title : Day of Week
 '''
+import pytest
 import logging
 import re
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')

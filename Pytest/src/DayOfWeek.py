@@ -112,13 +112,15 @@ def gregorian_calender(list):
         d = list[0]
         m = list[1]
         y = list[2]
+
+        print(type(d), type(m), type(y))
         y0 = y - ((14-m)//12)
         x = y0 + (y0//4) - (y0//100) + (y0//400)
         m0 =  m + 12 * ((14- m) // 12) - 2
         d0 = (d + x + 30 * m0//12) % 7
         return day[d0]
-    except:
-        logging.error("Check the calculation of day")
+    except (ValueError, TypeError):
+        logging.exception("Check the calculation of day")
+        
     
-
 print("The day is: {}".format(gregorian_calender(get_input())))

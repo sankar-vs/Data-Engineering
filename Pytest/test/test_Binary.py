@@ -27,7 +27,9 @@ class TestBinary(unittest.TestCase):
         self.assertEqual(Binary.shift([0,1,1,0,0,1,0,0], 4), shifted_list)
         value = 70
         self.assertEqual(Binary.toDecimal([0,1,1,0,0,1,0,0]), value)
-        
 
+        self.assertRaises(Exception, Binary.shift,[],"3")
+        self.assertRaises(Exception, Binary.toBinary,"")
+    
 if __name__ == '__main__':
     unittest.main()

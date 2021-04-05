@@ -43,8 +43,8 @@ def shift(list, n):
     try:
         n = n % len(list)
         return list[n:] + list[:n]
-    except (ValueError, TypeError):
-        pass
+    except:
+        raise Exception
     logging.error("Check inputs")
 
 def toBinary(num):
@@ -66,8 +66,8 @@ def toBinary(num):
             list.append(0)
         list.reverse()
         return list
-    except (ValueError, TypeError):
-        pass
+    except:
+        raise Exception
     logging.error("Check input")
 
 def toDecimal(list):
@@ -79,14 +79,17 @@ def toDecimal(list):
     Return:
         value (int): Decimal Value
     '''
-    shifts = len(list) // 2
-    shifted_list = shift(list, shifts)
-    value = 0
-    for i in range(len(shifted_list)):
-	    digit = shifted_list.pop()
-	    if digit == 1:
-		    value = value + pow(2, i)
-    print("The decimal value of the number is", value)
-    return value
+    try:
+        shifts = len(list) // 2
+        shifted_list = shift(list, shifts)
+        value = 0
+        for i in range(len(shifted_list)):
+	        digit = shifted_list.pop()
+	        if digit == 1:
+		        value = value + pow(2, i)
+        print("The decimal value of the number is", value)
+        return value
+    except:
+        raise Exception
 
 toDecimal(toBinary(num_regex()))

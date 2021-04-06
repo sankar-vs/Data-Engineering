@@ -54,7 +54,7 @@ def calculate_num_of_notes(amount):
         
         return result
     except (ValueError, TypeError):
-        pass
+        raise Exception("Check Inputs")
     logging.error("Check input")    
 
 calculate_num_of_notes(num_regex())

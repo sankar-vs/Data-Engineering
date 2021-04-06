@@ -23,6 +23,18 @@ class TestVendingMachine(unittest.TestCase):
         """
         amount = 5555
         self.assertEqual(VendingMachine.calculate_num_of_notes(amount), [5,1,0,1,0,1,0,0])
+
+    def test_calculate_num_of_notes_negative(self):
+        """
+        Description:
+            This method defines negative test case for VendingMachine.py file
+        Parameter:
+            None
+        Return:
+            None
+        """
+        self.assertNotEqual(VendingMachine.calculate_num_of_notes(100), [5,1,0,1,0,1,0,0])
+        self.assertRaises(Exception, VendingMachine.calculate_num_of_notes, "5554")
         
 
 if __name__ == '__main__':

@@ -104,7 +104,7 @@ def calculate_monthly_payments(list):
         payment = (P * r) / (1 - pow((1 + r), (-n)))
         return payment
     except:
-        pass
+        raise Exception("Check the inputs")
     logging.error("Check the formulas for Calculating the monthly payments")
 
 print("The Monthly Payment: {}".format(calculate_monthly_payments(get_input())))

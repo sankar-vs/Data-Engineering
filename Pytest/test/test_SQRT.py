@@ -23,6 +23,19 @@ class TestSQRT(unittest.TestCase):
         """
         value = 25
         self.assertEqual(SQRT.calculate_sqrt(value), 5.0)
+
+    def test_calculate_sqrt_negative(self):
+        """
+        Description:
+            This method defines negative test case for SQRT.py file
+        Parameter:
+            None
+        Return:
+            None
+        """
+        value = 50
+        self.assertNotEqual(SQRT.calculate_sqrt(value), 5.0)
+        self.assertRaises(Exception, SQRT.calculate_sqrt, "50")
         
 
 if __name__ == '__main__':

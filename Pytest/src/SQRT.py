@@ -49,5 +49,6 @@ def calculate_sqrt(num):
         return t
     except:
         logging.error("Check the Logic")
+        raise Exception("Check input")
 
 print("The root is: {}".format(calculate_sqrt(num_regex())))

@@ -80,8 +80,9 @@ def convert_to_celsius(t):
         celsius = ((t - 32) * (5/9))
         return celsius
     except:
-        pass
-    logging.error("Check the formula for fahrenheit to celsius conversion")
+        logging.error("Check the formula for fahrenheit to celsius conversion")
+        raise Exception("Check the inputs")
+    
 
 def convert_to_fahrenheit(t):
     '''
@@ -97,8 +98,9 @@ def convert_to_fahrenheit(t):
         fahrenheit = ((t * (9/5)) + 32)
         return fahrenheit
     except:
-        pass
-    logging.error("Check the formula for celsius to fahrenheit conversion")
+        logging.error("Check the formula for celsius to fahrenheit conversion")
+        raise Exception("Check the inputs")
+    
 
 def conversion():
     '''

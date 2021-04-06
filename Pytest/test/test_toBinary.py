@@ -24,6 +24,18 @@ class TestBinary(unittest.TestCase):
         decimal = 106
         self.assertEqual(toBinary.DecimalToBinary(decimal), [0,1,1,0,1,0,1,0])
         
+    def test_decimal_to_binary_negative(self):
+        """
+        Description:
+            This method defines negative test case for toBinary.py file
+        Parameter:
+            None
+        Return:
+            None
+        """
+        decimal = 100
+        self.assertNotEqual(toBinary.DecimalToBinary(decimal), [0,1,1,0,1,0,1,0])
+        self.assertRaises(Exception, toBinary.DecimalToBinary, "100")
 
 if __name__ == '__main__':
     unittest.main()

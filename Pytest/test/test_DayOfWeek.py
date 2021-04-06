@@ -25,30 +25,21 @@ class TestDayOfWeek(unittest.TestCase):
         result = DayOfWeek.gregorian_calender(list)
         self.assertEqual(result, "Saturday")
 
+    def test_gregorian_calender_negative(self):
+        """
+        Description:
+            This method define for negative test case for DayOfWeek.py file
+        Parameter:
+            None
+        Return:
+            None
+        """
+        list = [3, 5, 2021]
+        result = DayOfWeek.gregorian_calender(list)
+        self.assertNotEqual(result, "Saturday")
+
+        list = ["3", 5, 2021]
+        self.assertRaises((TypeError, ValueError), DayOfWeek.gregorian_calender, list)
+
 if __name__ == '__main__':
     unittest.main()
-
-# @pytest.fixture
-# def input():
-#     '''
-#     Description:
-#         Set the fixture of inputs to be given for the test case
-#     Parameter:
-#         None
-#     Return:
-#         list (list): integer elements
-#     '''
-#     list = [3, 4, 2021]
-#     return list
-
-# def test_gregorian_calender(input):
-#     '''
-#     Description:
-#         Test of the function gregorian_calender() to check the 
-#         output is equal to that of the expected result
-#     Parameter:
-#         None
-#     Return:
-#         None
-#     '''
-#     assert gregorian_calender(input) == "Sunday"

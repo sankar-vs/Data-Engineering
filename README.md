@@ -1,2 +1,2 @@
 ## Python Practice
-### Logical Programs
+### Data Structures

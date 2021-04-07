@@ -1,0 +1,15 @@
+{
+    "pulses" : 
+    [
+        {
+            "name": "Sugar",
+            "weight": 6,
+            "pricePerKg": 100
+        },
+        {
+            "name": "Rice",
+            "weight": 5,
+            "pricePerKg": 90
+        }
+    ]
+}

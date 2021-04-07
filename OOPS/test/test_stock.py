@@ -6,7 +6,7 @@
 @Title : Stock Account Management Test
 '''
 import pytest, os
-from stock import Portfolio, Stocks
+from src.Stock import Portfolio, Stocks
 
 def test_add_stock():
     port = Portfolio()

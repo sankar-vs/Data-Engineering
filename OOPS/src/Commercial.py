@@ -30,7 +30,7 @@ class StockAccount:
     entries = {}
 
     def __init__(self, file):
-        with open("OOPS/src/resources/" + file + ".csv", "r") as f:
+        with open("../src/resources/" + file + ".csv", "r") as f:
             csv_list = f.readlines()
             for line in csv_list:
                 data =  line.rstrip().split(",")
@@ -79,7 +79,7 @@ class StockAccount:
         Return:
             None
         '''
-        with open("OOPS/src/resources/" + file + ".csv", "w") as f:
+        with open("../src/resources/" + file + ".csv", "w") as f:
             for i in self.entries:
                 data = self.entries[i]
                 f.write(f"{data[0]},{data[1]}\n")

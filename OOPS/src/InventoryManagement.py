@@ -29,8 +29,8 @@ class Management:
     '''
     entries = {}
     def __init__(self):
-        if os.path.isfile("resources/inventory.json"):
-            with open("resources/inventory.json", "r") as f:
+        if os.path.isfile("../src/resources/inventory.json"):
+            with open("../src/resources/inventory.json", "r") as f:
                 self.entries = json.load(f)
                 print(self.entries)
                 
@@ -92,7 +92,7 @@ class Management:
         self.calculate_total_price()
     
     def write_to_json(self):
-        with open("resources/inventory_updated.json", "w") as f:
+        with open("../src/resources/inventory_updated.json", "w") as f:
                 json.dump(self.entries, f, indent=4)
 
     def get_entries(self):

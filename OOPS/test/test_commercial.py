@@ -47,7 +47,7 @@ def test_save_stock():
     '''
     stock = StockAccount("account")
     stock.save("account")
-    if os.path.isfile("OOPS/src/resources/account.csv"):
-        with open("OOPS/src/resources/account.csv", "r") as f:
+    if os.path.isfile("../src/resources/account.csv"):
+        with open("../src/resources/account.csv", "r") as f:
             data = f.readlines()
             assert len(data) == 1

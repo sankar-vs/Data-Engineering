@@ -32,11 +32,11 @@ class ClinicalManagement:
     entriesPatient = {}
 
     def __init__(self):
-        if os.path.isfile("resources/doctor.json"):
-            with open("resources/doctor.json", "r") as f:
+        if os.path.isfile("../src/resources/doctor.json"):
+            with open("../src/resources/doctor.json", "r") as f:
                 self.entriesDoctor = json.load(f)
-        if os.path.isfile("resources/patient.json"):
-            with open("resources/patient.json", "r") as f:
+        if os.path.isfile("../src/resources/doctor.json"):
+            with open("../src/resources/patient.json", "r") as f:
                 self.entriesPatient = json.load(f)
 
     def add_patient(self, name, phone, age):
@@ -144,10 +144,10 @@ class ClinicalManagement:
         Return: 
             None
         '''
-        with open("resources/doctor.json", "w") as f:
+        with open("../src/resources/doctor.json", "w") as f:
                 json.dump(self.entriesDoctor, f, indent=4)
 
-        with open("resources/patient.json", "w") as f:
+        with open("../src/resources/patient.json", "w") as f:
                 json.dump(self.entriesPatient, f, indent=4)
 
     def get_entriesPatient(self):
@@ -252,7 +252,8 @@ def clinic_process():
                 clinic.make_an_appointment(patient_id, choose_id)
 
             elif (user_input == "2"):
-                patient_id = clinic.existing_patient("Selvi")
+                name = name_regex("Enter patients name: ")
+                patient_id = clinic.existing_patient(name)
                 clinic.print_patient()
                 clinic.print_doctor()
                 choose_id = int(input("Please choode the ID of doctor you would like to consult: "))

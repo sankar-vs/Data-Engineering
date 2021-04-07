@@ -6,7 +6,7 @@
 @Title : Test Deck of Cards
 '''
 import pytest
-from cards import Card, Deck, Player
+from src.Cards import Card, Deck, Player
 
 def test_card(capsys):
     '''

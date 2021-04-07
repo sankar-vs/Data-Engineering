@@ -69,8 +69,8 @@ class Portfolio:
             return "\nStock added successfully.\n"
 
     def read_file(self):
-        if os.path.isfile("OOPS/src/resources/stock.csv"):
-            with open("OOPS/src/resources/stock.csv") as f:
+        if os.path.isfile("../src/resources/stock.csv"):
+            with open("../src/resources/stock.csv") as f:
                 csv_list = f.readlines()
                 for line in csv_list:
                     data =  line.rstrip().split(",")
@@ -78,7 +78,7 @@ class Portfolio:
                     self.entries[data[0]] = stock
 
     def print_file(self):
-        with open("OOPS/src/resources/stock.csv", "w") as f:
+        with open("../src/resources/stock.csv", "w") as f:
             for i in self.entries:
                 f.write(f"{self.entries[i].name},{self.entries[i].numOfShare},{self.entries[i].price},{self.entries[i].total}\n")
 

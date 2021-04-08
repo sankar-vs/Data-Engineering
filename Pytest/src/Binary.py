@@ -8,7 +8,17 @@
 import pytest
 import logging
 import re
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+
+logger = logging.getLogger("Binary" + __name__)
+logger.setLevel(logging.INFO)
+# define file handler and set formatter
+file_handler = logging.FileHandler('logfile.log')
+formatter    = logging.Formatter('%(asctime)s : %(levelname)s : %(name)s : %(message)s')
+file_handler.setFormatter(formatter)
+
+# add file handler to logger
+logger.addHandler(file_handler)
+# logging.basicConfig(filename="loggerfile.log",format='%(asctime)s - %(levelname)s - %(message)s', filemode='w')
 def num_regex():
     '''
     Description:
@@ -28,7 +38,7 @@ def num_regex():
                 return int(num)
         except:
             pass
-        logging.warning("Enter numerics only greater than 0") 
+        logger.warning("Enter numerics only greater than 0")
 
 def shift(list, n):
     '''
@@ -45,7 +55,7 @@ def shift(list, n):
         return list[n:] + list[:n]
     except:
         raise Exception
-    logging.error("Check inputs")
+    logger.error("Check inputs")
 
 def toBinary(num):
     '''
@@ -57,6 +67,7 @@ def toBinary(num):
         list (list): convertion of decimal to binary 
     '''
     try:
+        logger.info("The entered number is : {}".format(num))
         list = []
         while(num > 0):
             digit = num % 2
@@ -68,7 +79,7 @@ def toBinary(num):
         return list
     except:
         raise Exception
-    logging.error("Check input")
+    logger.error("Check input")
 
 def toDecimal(list):
     '''
@@ -89,6 +100,6 @@ def toDecimal(list):
 		        value = value + pow(2, i)
         return value
     except:
-        raise Exception
+        logger.exception("Program Stopped")
 
-print("The decimal value of the number is", toDecimal(toBinary(num_regex())))
+logger.info("The decimal value of the number is {}".format(toDecimal(toBinary(num_regex()))))

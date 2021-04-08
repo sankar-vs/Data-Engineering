@@ -8,9 +8,24 @@
 import re
 import logging
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+
 class MyException(Exception):
+    '''
+    Class:
+        MyException
+
+    Description:
+        Custom Exceptions
+
+    Functions:
+        None
+
+    Variable:
+        None
+    '''
     def __init__(self, message):
         self.message = message
+
     def __str__(self):
         return self.message
 
@@ -108,6 +123,24 @@ class Contact:
         self._email = newEmail
 
 class AddressBook():
+    '''
+    Class:
+        AddressBook
+
+    Description:
+        Class to perform various features such as add, update, remove and display
+
+    Functions:
+        add_entries(contact)
+        search_entry(name)
+        display_entries()
+        remove_entry(name)
+        update_entry(name, param, value)
+        get_entries() -> dict
+
+    Variable:
+        entries (dict)
+    '''
     __entries = {}
 
     def add_entries(self, contact):

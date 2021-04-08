@@ -8,6 +8,12 @@
 import re
 import logging
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s')
+class MyException(Exception):
+    def __init__(self, message):
+        self.message = message
+    def __str__(self):
+        return self.message
+
 class Contact:
     '''
     Class:
@@ -27,13 +33,13 @@ class Contact:
         None
     '''
     def __init__(self, firstName, lastName, phone, email):
-        self.firstName = firstName
-        self.lastName = lastName
-        self.phone = phone
-        self.email = email
+        self._firstName = firstName
+        self._lastName = lastName
+        self._phone = phone
+        self._email = email
 
     def __str__(self):
-        return self.firstName + "," + self.lastName + "," + self.phone + "," + self.email
+        return self._firstName + "," + self._lastName + "," + self._phone + "," + self._email
 
     def getFirstName(self):
         '''
@@ -44,7 +50,7 @@ class Contact:
         Return:
             firstName (str)
         '''
-        return self.firstName
+        return self._firstName
 
     def getLastName(self):
         '''
@@ -55,7 +61,7 @@ class Contact:
         Return:
             firstName (str)
         '''
-        return self.lastName
+        return self._lastName
     
     def setFirstName(self, newFirstName):
         '''
@@ -66,7 +72,7 @@ class Contact:
         Return:
             None
         '''
-        self.firstName = newFirstName
+        self._firstName = newFirstName
 
     def setLastName(self, newLastName):
         '''
@@ -77,7 +83,7 @@ class Contact:
         Return:
             None
         '''
-        self.lastName = newLastName
+        self._lastName = newLastName
 
     def setPhone(self, newPhone):
         '''
@@ -88,7 +94,7 @@ class Contact:
         Return:
             None
         '''
-        self.phone = newPhone
+        self._phone = newPhone
 
     def setEmail(self, newEmail):
         '''
@@ -99,10 +105,10 @@ class Contact:
         Return:
             None
         '''
-        self.email = newEmail
+        self._email = newEmail
 
-class AddressBook:
-    entries = {}
+class AddressBook():
+    __entries = {}
 
     def add_entries(self, contact):
         '''
@@ -114,10 +120,10 @@ class AddressBook:
             returns the flow of the program
         '''
         name = contact.getFirstName()
-        if name in self.entries:
+        if name in self.__entries:
             return "\nContact already present.\n"
         else:
-            self.entries[name] = contact
+            self.__entries[name] = contact
             return "\nContact added successfully.\n"
 
     def search_entry(self, name):
@@ -129,8 +135,8 @@ class AddressBook:
         Return:
             returns the flow of the program
         '''
-        if name in self.entries:    
-            print(self.entries[name])
+        if name in self.__entries:    
+            print(self.__entries[name])
             return '\nContact Found.\n'
         else:
             return '\nName not found.\n'
@@ -144,8 +150,8 @@ class AddressBook:
         Return:
             None
         '''
-        for i in self.entries:
-            print(self.entries[i])
+        for i in self.__entries:
+            print(self.__entries[i])
 
     def remove_entry(self, name):
         '''
@@ -156,8 +162,8 @@ class AddressBook:
         Return:
             returns the flow of the program
         '''
-        if name in self.entries:
-            del self.entries[name]
+        if name in self.__entries:
+            del self.__entries[name]
             return '\nContact removed successfully.\n'
         else:
             return '\nName not found.\n'
@@ -174,8 +180,8 @@ class AddressBook:
         Return:
             returns the flow of the program
         '''
-        if name in self.entries:
-            k = self.entries[name]
+        if name in self.__entries:
+            k = self.__entries[name]
             funcs = [k.setFirstName, k.setLastName, k.setPhone, k.setEmail]
             funcs[param-1](value)
             return '\nContact updated successfully.\n'
@@ -191,7 +197,7 @@ class AddressBook:
         Return:
             entries (dict)
         '''
-        return self.entries
+        return self.__entries
 
 def name_regex(x):
     '''
@@ -211,7 +217,7 @@ def name_regex(x):
             if (result):
                 return str(name)
         except:
-            pass
+            raise MyException("Value Error")
         logging.warning("Enter proper Name")
 
 def phone_regex(x):
@@ -232,7 +238,7 @@ def phone_regex(x):
             if (result):
                 return str(phone)
         except:
-            pass
+            raise MyException("Value Error")
         logging.warning("Enter proper Number")
 
 def email_regex(x):
@@ -253,7 +259,7 @@ def email_regex(x):
             if (result):
                 return str(email)
         except:
-            pass
+            raise MyException("Value Error")
         logging.warning("Enter proper email")
 
 def book():
@@ -302,13 +308,16 @@ def book():
             elif user_input == "5":
                 firstName = input("Enter First Name: ")
                 while True:
-                    choice = int(input("Choose Field To Update: \n1. FirstName\n2. LastName\n3. Phone Number\n4.Email"))
+                    choice = int(input("Choose Field To Update: \n1. FirstName\n2. LastName\n3. Phone Number\n4.Email \n"))
                     if(choice == 1 | choice == 2):
                         value = name_regex("Update to: ")
+                        break
                     elif (choice == 3):
                         value = phone_regex("Update to: ")
+                        break
                     elif (choice == 4):
-                        value = phone_regex("Update to: ")
+                        value = email_regex("Update to: ")
+                        break
                     else:
                         print("Please Choose properly")
                 addressBook.update_entry(firstName, choice, value)
@@ -320,7 +329,6 @@ def book():
                 print("Please Select Proper Option")
 
     except:
-        pass
-
+        raise MyException("Program Stopped")
 
 book()

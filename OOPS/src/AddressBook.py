@@ -29,99 +29,6 @@ class MyException(Exception):
     def __str__(self):
         return self.message
 
-class Contact:
-    '''
-    Class:
-        Contact
-
-    Description:
-        Class to store the contacts firstName, lastName, phone number and email
-
-    Functions:
-        getFirstName() -> str
-        setFirstName(newFirstName)
-        setLastName(newLastName)
-        setPhone(newPhone)
-        setEmail(newEmail)
-
-    Variable:
-        None
-    '''
-    def __init__(self, firstName, lastName, phone, email):
-        self._firstName = firstName
-        self._lastName = lastName
-        self._phone = phone
-        self._email = email
-
-    def __str__(self):
-        return self._firstName + "," + self._lastName + "," + self._phone + "," + self._email
-
-    def getFirstName(self):
-        '''
-        Description:
-            Returns FirstName
-        Parameter:
-            None
-        Return:
-            firstName (str)
-        '''
-        return self._firstName
-
-    def getLastName(self):
-        '''
-        Description:
-            Returns LastName
-        Parameter:
-            None
-        Return:
-            firstName (str)
-        '''
-        return self._lastName
-    
-    def setFirstName(self, newFirstName):
-        '''
-        Description:
-            sets FirstName when updating the contacts
-        Parameter:
-            newFirstName (str) : input from user
-        Return:
-            None
-        '''
-        self._firstName = newFirstName
-
-    def setLastName(self, newLastName):
-        '''
-        Description:
-            sets LastName when updating the contacts
-        Parameter:
-            newLastName (str) : input from user
-        Return:
-            None
-        '''
-        self._lastName = newLastName
-
-    def setPhone(self, newPhone):
-        '''
-        Description:
-            sets phone when updating the contacts
-        Parameter:
-            newPhone (str) : input from user
-        Return:
-            None
-        '''
-        self._phone = newPhone
-
-    def setEmail(self, newEmail):
-        '''
-        Description:
-            sets Email when updating the contacts
-        Parameter:
-            newEmail (str) : input from user
-        Return:
-            None
-        '''
-        self._email = newEmail
-
 class AddressBook():
     '''
     Class:
@@ -232,6 +139,99 @@ class AddressBook():
         '''
         return self.__entries
 
+class Contact(AddressBook):
+    '''
+    Class:
+        Contact
+
+    Description:
+        Class to store the contacts firstName, lastName, phone number and email
+
+    Functions:
+        getFirstName() -> str
+        setFirstName(newFirstName)
+        setLastName(newLastName)
+        setPhone(newPhone)
+        setEmail(newEmail)
+
+    Variable:
+        None
+    '''
+    def __init__(self, firstName, lastName, phone, email):
+        self._firstName = firstName
+        self._lastName = lastName
+        self._phone = phone
+        self._email = email
+
+    def __str__(self):
+        return self._firstName + "," + self._lastName + "," + self._phone + "," + self._email
+
+    def getFirstName(self):
+        '''
+        Description:
+            Returns FirstName
+        Parameter:
+            None
+        Return:
+            firstName (str)
+        '''
+        return self._firstName
+
+    def getLastName(self):
+        '''
+        Description:
+            Returns LastName
+        Parameter:
+            None
+        Return:
+            firstName (str)
+        '''
+        return self._lastName
+    
+    def setFirstName(self, newFirstName):
+        '''
+        Description:
+            sets FirstName when updating the contacts
+        Parameter:
+            newFirstName (str) : input from user
+        Return:
+            None
+        '''
+        self._firstName = newFirstName
+
+    def setLastName(self, newLastName):
+        '''
+        Description:
+            sets LastName when updating the contacts
+        Parameter:
+            newLastName (str) : input from user
+        Return:
+            None
+        '''
+        self._lastName = newLastName
+
+    def setPhone(self, newPhone):
+        '''
+        Description:
+            sets phone when updating the contacts
+        Parameter:
+            newPhone (str) : input from user
+        Return:
+            None
+        '''
+        self._phone = newPhone
+
+    def setEmail(self, newEmail):
+        '''
+        Description:
+            sets Email when updating the contacts
+        Parameter:
+            newEmail (str) : input from user
+        Return:
+            None
+        '''
+        self._email = newEmail
+        
 def name_regex(x):
     '''
     Description:

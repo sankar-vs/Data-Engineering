@@ -14,7 +14,7 @@ def name_regex(name):
     try:
         pattern = "^[A-Z]{1}[a-zA-Z]{2,}$"
         result = re.match(pattern, name)
-        return result
+        return bool(result)
     except:
         raise Exception("Input invalid")   
 
@@ -32,7 +32,7 @@ def phone_regex(phone):
     try:
         pattern = "^[0-9]{2}\\s[7-9][0-9]{9}$"
         result = re.match(pattern, phone)
-        return result
+        return bool(result)
     except:
         raise Exception("Input invalid")  
 
@@ -50,7 +50,7 @@ def email_regex(email):
     try:
         pattern = "^[a-z0-9]+(\\.[_a-z0-9]+)*(\\-[_a-z0-9]+)*(\\+[_a-z0-9]+)*[@]{1}[^.][a-z0-1]*[.]{1}[a-z]{3}(\\.[a-z]{2,4}){0,1}$"
         result = re.match(pattern, email)
-        return result
+        return bool(result)
     except:
         raise Exception("Input invalid")  
 
@@ -59,25 +59,17 @@ def password_regex(password):
     Description:
         Get input from user, check whether the input is matching with the pattern
         expression, if True then return
-        checks whether the entered password is valid or not. If valid it returns boolean
-        
-        Rule:1 minimum 8 characters (?=.{8,}) or ^[A-Za-z0-9].{8,}$
-        ^[A-Za-z0-9].{8,}$
-        Rule:2 Should have atleast 1 Uppercase ^(?=.?[A-Z])
-        ^(?=.?[A-Z])[A-Za-z0-9].{8,}$
-        Rule:3 Should have atleast 1 numeric ^(?=.?[0-9]) or (?=.*\d)
-        ^((?=.*[A-Z])(?=.*[0-9]))[A-Za-z0-9].{8,}$
-        Rule:4 Should have atleast 1 special character (?=.?[@$!%*#?&])
-        ^((?=.?[A-Z])(?=.?[0-9])(?=.?[@$!%*#?&]))[A-Za-z0-9].{8,}$
+        checks whether the entered password is valid or not. If valid it returns boolean    
     Parameter:
         x (str): Statement to be asked
     Return:
         result (boolean)
     '''
+    
     try:
         pattern = "^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*])(?!.*[!@#$%^&*].*[!@#$%^&*]).*$"
         result = re.match(pattern, password)
-        return result
+        return bool(result)
     except:
         raise Exception("Input invalid")  
 
@@ -100,5 +92,3 @@ def login():
             print("Set Password: ",password)
     except:
         raise Exception("Program has stopped working")
-
-login()

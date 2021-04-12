@@ -1,78 +1,65 @@
 import re
-import logging
 
-def name_regex(x):
+def name_regex(name):
     '''
     Description:
         Get input from user, check whether the input is matching with the pattern
         expression, if True then return
-        checks whether the entered phone number is valid or not. If valid it returns the string
+        checks whether the entered phone number is valid or not. If valid it returns boolean
+    Parameter:
+        name (str): Statement to be asked
+    Return:
+        result (boolean)
+    '''
+    try:
+        pattern = "^[A-Z]{1}[a-zA-Z]{2,}$"
+        result = re.match(pattern, name)
+        return result
+    except:
+        raise Exception("Input invalid")   
+
+def phone_regex(phone):
+    '''
+    Description:
+        Get input from user, check whether the input is matching with the pattern
+        expression, if True then return
+        checks whether the entered phone number is valid or not. If valid it returns boolean
     Parameter:
         x (str): Statement to be asked
     Return:
-        name (str): input from user
+        result (boolean)
     '''
-    while True:
-        try:
-            name = input(x)
-            pattern = "^[A-Z]{1}[a-zA-Z]{2,}$"
-            result = re.match(pattern, name)
-            if (result):
-                return str(name)
-        except:
-            pass
-        logging.warning("Enter proper Name")
+    try:
+        pattern = "^[0-9]{2}\\s[7-9][0-9]{9}$"
+        result = re.match(pattern, phone)
+        return result
+    except:
+        raise Exception("Input invalid")  
 
-def phone_regex(x):
+def email_regex(email):
     '''
     Description:
         Get input from user, check whether the input is matching with the pattern
         expression, if True then return
-        checks whether the entered phone number is valid or not. If valid it returns the string
+        checks whether the entered email is valid or not. If valid it returns boolean
     Parameter:
         x (str): Statement to be asked
     Return:
-        phone (str): input from user
+        result (boolean)
     '''
-    while True:
-        try:
-            phone = input(x)
-            pattern = "^[0-9]{2}\\s[0-9]{10}$"
-            result = re.match(pattern, phone)
-            if (result):
-                return str(phone)
-        except:
-            pass
-        logging.warning("Enter proper Number")
+    try:
+        pattern = "^[a-z0-9]+(\\.[_a-z0-9]+)*(\\-[_a-z0-9]+)*(\\+[_a-z0-9]+)*[@]{1}[^.][a-z0-1]*[.]{1}[a-z]{3}(\\.[a-z]{2,4}){0,1}$"
+        result = re.match(pattern, email)
+        return result
+    except:
+        raise Exception("Input invalid")  
 
-def email_regex(x):
+def password_regex(password):
     '''
     Description:
         Get input from user, check whether the input is matching with the pattern
         expression, if True then return
-        checks whether the entered email is valid or not. If valid it returns the string
-    Parameter:
-        x (str): Statement to be asked
-    Return:
-        email (str): input from user
-    '''
-    while True:
-        try:
-            email = input(x)
-            pattern = "^[a-z0-9]+(\\.[_a-z0-9]+)*(\\-[_a-z0-9]+)*(\\+[_a-z0-9]+)*[@]{1}[^.][a-z0-1]*[.]{1}[a-z]{3}(\\.[a-z]{2,4}){0,1}$"
-            result = re.match(pattern, email)
-            if (result):
-                return str(email)
-        except:
-            pass
-        logging.warning("Enter proper email")
-
-def password_regex(x):
-    '''
-    Description:
-        Get input from user, check whether the input is matching with the pattern
-        expression, if True then return
-        checks whether the entered password is valid or not. If valid it returns the string
+        checks whether the entered password is valid or not. If valid it returns boolean
         
         Rule:1 minimum 8 characters (?=.{8,}) or ^[A-Za-z0-9].{8,}$
         ^[A-Za-z0-9].{8,}$
@@ -85,29 +72,32 @@ def password_regex(x):
     Parameter:
         x (str): Statement to be asked
     Return:
-        password (str): input from user
+        result (boolean)
     '''
-    while True:
-        try:
-            password = input(x)
-            pattern = "^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*])(?!.*[!@#$%^&*].*[!@#$%^&*]).*$"
-            result = re.match(pattern, password)
-            if (result):
-                return str(password)
-        except:
-            pass
-        logging.warning("Enter proper password")
+    try:
+        pattern = "^(?=.{8,}$)(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*])(?!.*[!@#$%^&*].*[!@#$%^&*]).*$"
+        result = re.match(pattern, password)
+        return result
+    except:
+        raise Exception("Input invalid")  
 
 def login():
     try:
-        firstName = name_regex("Enter First Name: ")
-        lastName = name_regex("Enter Last Name: ")
-        phone_number = phone_regex("Enter Phone Number: ")
-        email = email_regex("Enter your email: ")
-        password = password_regex("Set your Password: ")
-
-        print("The Details entered by you are: \nFirstName: {}\nLastName: {}\nPhone: {}\nEmail: {}\nPassword: {}".format(firstName, lastName, phone_number, email, password))
-
+        firstName = input("Enter First Name: ")
+        lastName = input("Enter Last Name: ")
+        phone_number = input("Enter Phone Number: ")
+        email = input("Enter your email: ")
+        password = input("Set your Password: ")
+        if (name_regex(firstName)):
+            print("First Name: ",firstName)
+        if (name_regex(lastName)):
+            print("Last Name: ",lastName)
+        if (phone_regex(phone_number)):
+            print("Phone Number: ",phone_number)
+        if (email_regex(email)):
+            print("Email: ",email)
+        if (password_regex(password)):
+            print("Set Password: ",password)
     except:
         raise Exception("Program has stopped working")
 

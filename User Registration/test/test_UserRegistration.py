@@ -1,5 +1,5 @@
 import pytest
-import UserRegistration as ur
+from src import UserRegistration as ur
 
 def test_checkGivenFirstNameIsValid():
     assert ur.name_regex("Samuel") == True

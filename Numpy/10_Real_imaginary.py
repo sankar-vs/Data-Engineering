@@ -3,7 +3,7 @@
 @Date: 2021-04-14 08:19:25
 @Last Modified by: Sankar
 @Last Modified time: 2021-04-14 08:35:09
-@Title : Numpy_Python-9
+@Title : Numpy_Python-10
 '''
 '''
 Write a Python program to find the real and imaginary parts of an array of complex

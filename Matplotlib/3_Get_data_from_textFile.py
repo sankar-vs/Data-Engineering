@@ -19,7 +19,7 @@ import csv
 
 x = []
 y = []
-with open('Matplotlib/resurces/test.txt', 'r') as f:
+with open('Matplotlib/resources/test.txt', 'r') as f:
     data = csv.reader(f, delimiter = ' ')
     for i in data:
         x.append(i[0])

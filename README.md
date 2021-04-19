@@ -1,2 +1,2 @@
 ## Python Practice
-### Matplotlib Barchart
+### Matplotlib Piechart

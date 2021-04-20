@@ -1,2 +1,2 @@
 ## Python Practice
-### Matplotlib Scatterplot
+### Seaborn

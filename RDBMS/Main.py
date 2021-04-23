@@ -61,6 +61,7 @@ def features():
 
             elif (user_input == "7"):
                 logger.info("Choosen to delete record")
+                connect.retrieve()
                 connect.delete()
 
             elif user_input == "q":

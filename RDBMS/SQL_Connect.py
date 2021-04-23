@@ -74,9 +74,18 @@ class CRUD:
             cursor = self.__db.cursor()
             cursor.execute("INSERT INTO "+self.__table_name+" (name, salary) VALUES (%s,%s)", (name, salary))
 
-            self.__db.commit()
+            id = cursor.lastrowid
+            deductions = salary * 0.2
+            taxable_pay = salary - deductions
+            tax = taxable_pay * 0.1
+            netpay = salary - tax
 
+            cursor.execute("INSERT INTO payroll_details (employee_id, basic_pay, deductions, taxable_pay, tax, netpay)" +
+                " VALUE ({},{},{},{},{},{})".format(id, salary, deductions, taxable_pay, tax, netpay))
+
+            self.__db.commit()
             logger.info("{} record inserted".format(cursor.rowcount))
+
         except:
             logger.error("Insert aborted")
             
@@ -141,7 +150,7 @@ class CRUD:
             logger.info("Entered: {}".format(id))
             cursor = self.__db.cursor()
 
-            cursor.execute("DELETE FROM "+self.__table_name+" WHERE id = %s", (id))
+            cursor.execute("DELETE FROM {} WHERE id = {}".format(self.__table_name, id))
 
             self.__db.commit()
 

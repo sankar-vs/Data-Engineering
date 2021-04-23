@@ -35,3 +35,134 @@
 2021-04-23 09:53:33,076 - log - INFO - (2, 'Sankar', 20000.0)
 2021-04-23 09:53:34,513 - log - INFO - Connection Successfull!
 2021-04-23 09:53:34,514 - log - INFO - Choosen to quit
+2021-04-23 10:41:16,483 - log - INFO - Program start
+2021-04-23 10:41:20,306 - log - INFO - Connection Successfull!
+2021-04-23 10:41:20,307 - log - INFO - Choosen to insert record
+2021-04-23 10:41:30,088 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:41:30,158 - log - ERROR - Insert aborted
+2021-04-23 10:41:42,225 - log - INFO - Connection Successfull!
+2021-04-23 10:41:42,225 - log - INFO - Choosen to quit
+2021-04-23 10:42:06,028 - log - INFO - Program start
+2021-04-23 10:42:09,657 - log - INFO - Connection Successfull!
+2021-04-23 10:42:09,657 - log - INFO - Choosen to insert record
+2021-04-23 10:42:17,145 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:42:17,304 - log - ERROR - Insert aborted
+2021-04-23 10:42:51,200 - log - INFO - Connection Successfull!
+2021-04-23 10:42:53,400 - log - INFO - Connection Successfull!
+2021-04-23 10:42:53,402 - log - INFO - Choosen to insert record
+2021-04-23 10:42:57,379 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:42:58,013 - log - ERROR - Insert aborted
+2021-04-23 10:46:12,762 - log - INFO - Connection Successfull!
+2021-04-23 10:46:15,845 - log - INFO - Connection Successfull!
+2021-04-23 10:46:15,846 - log - INFO - Choosen to insert record
+2021-04-23 10:46:22,570 - log - INFO - Entered: Vijaya, 5000.0
+2021-04-23 10:46:23,413 - log - ERROR - Insert aborted
+2021-04-23 10:47:53,689 - log - INFO - Connection Successfull!
+2021-04-23 10:47:56,342 - log - INFO - Connection Successfull!
+2021-04-23 10:47:56,344 - log - INFO - Choosen to insert record
+2021-04-23 10:48:00,253 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:48:00,684 - log - ERROR - Insert aborted
+2021-04-23 10:49:50,427 - log - INFO - Connection Successfull!
+2021-04-23 10:49:52,603 - log - INFO - Connection Successfull!
+2021-04-23 10:49:52,604 - log - INFO - Choosen to insert record
+2021-04-23 10:49:56,286 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:49:56,585 - log - ERROR - Insert aborted
+2021-04-23 10:50:00,722 - log - INFO - Connection Successfull!
+2021-04-23 10:50:00,724 - log - INFO - Choosen to quit
+2021-04-23 10:50:33,130 - log - INFO - Program start
+2021-04-23 10:50:34,940 - log - INFO - Connection Successfull!
+2021-04-23 10:50:34,940 - log - INFO - Choosen to insert record
+2021-04-23 10:50:38,439 - log - INFO - Entered: Vijay, 5000.0
+2021-04-23 10:50:38,596 - log - INFO - 1 record inserted
+2021-04-23 10:50:42,754 - log - INFO - Connection Successfull!
+2021-04-23 10:50:42,754 - log - INFO - Choosen to quit
+2021-04-23 10:51:41,552 - log - INFO - Program start
+2021-04-23 10:51:43,386 - log - INFO - Connection Successfull!
+2021-04-23 10:51:43,386 - log - INFO - Choosen to insert record
+2021-04-23 10:51:48,259 - log - INFO - Entered: Sam, 6000.0
+2021-04-23 10:51:48,294 - log - ERROR - Insert aborted
+2021-04-23 10:52:01,826 - log - INFO - Connection Successfull!
+2021-04-23 10:52:01,826 - log - INFO - Choosen to quit
+2021-04-23 10:55:07,398 - log - INFO - Program start
+2021-04-23 10:55:11,739 - log - INFO - Connection Successfull!
+2021-04-23 10:55:11,740 - log - INFO - Choosen to insert record
+2021-04-23 10:55:11,740 - log - ERROR - Insert aborted
+2021-04-23 10:56:13,463 - log - INFO - Connection Successfull!
+2021-04-23 10:56:16,668 - log - INFO - Connection Successfull!
+2021-04-23 10:56:16,669 - log - INFO - Choosen to insert record
+2021-04-23 10:56:16,669 - log - ERROR - Insert aborted
+2021-04-23 10:59:02,033 - log - INFO - Connection Successfull!
+2021-04-23 10:59:04,163 - log - INFO - Connection Successfull!
+2021-04-23 10:59:04,164 - log - INFO - Choosen to insert record
+2021-04-23 10:59:04,165 - log - ERROR - Insert aborted
+2021-04-23 10:59:33,611 - log - INFO - Connection Successfull!
+2021-04-23 10:59:38,953 - log - INFO - Connection Successfull!
+2021-04-23 10:59:38,954 - log - INFO - Choosen to quit
+2021-04-23 10:59:48,388 - log - INFO - Program start
+2021-04-23 10:59:51,000 - log - INFO - Connection Successfull!
+2021-04-23 10:59:51,000 - log - INFO - Choosen to insert record
+2021-04-23 10:59:51,302 - log - INFO - 1 record inserted
+2021-04-23 11:01:14,891 - log - INFO - Connection Successfull!
+2021-04-23 11:01:19,317 - log - INFO - Connection Successfull!
+2021-04-23 11:01:19,319 - log - INFO - Choosen to quit
+2021-04-23 11:01:28,309 - log - INFO - Program start
+2021-04-23 11:01:29,969 - log - INFO - Connection Successfull!
+2021-04-23 11:01:29,969 - log - INFO - Choosen to insert record
+2021-04-23 11:01:34,991 - log - INFO - Entered: Sam, 80000.0
+2021-04-23 11:01:35,174 - log - INFO - 1 record inserted
+2021-04-23 11:01:57,833 - log - INFO - Connection Successfull!
+2021-04-23 11:01:57,833 - log - INFO - Choosen to delete record
+2021-04-23 11:02:04,019 - log - INFO - Entered: 11
+2021-04-23 11:02:04,021 - log - ERROR - Delete aborted
+2021-04-23 11:02:09,447 - log - INFO - Connection Successfull!
+2021-04-23 11:02:09,448 - log - INFO - Choosen to retrieve records
+2021-04-23 11:02:09,450 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:02:09,450 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:02:09,450 - log - INFO - (11, 'Sam', 80000.0)
+2021-04-23 11:02:12,208 - log - INFO - Connection Successfull!
+2021-04-23 11:02:12,209 - log - INFO - Choosen to quit
+2021-04-23 11:04:38,556 - log - INFO - Program start
+2021-04-23 11:04:42,154 - log - INFO - Connection Successfull!
+2021-04-23 11:04:42,155 - log - INFO - Choosen to insert record
+2021-04-23 11:04:49,383 - log - INFO - Entered: Samuel, 100000.0
+2021-04-23 11:04:49,698 - log - INFO - 1 record inserted
+2021-04-23 11:04:53,069 - log - INFO - Connection Successfull!
+2021-04-23 11:04:53,069 - log - INFO - Choosen to retrieve records
+2021-04-23 11:04:53,070 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:04:53,071 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:04:53,071 - log - INFO - (12, 'Samuel', 100000.0)
+2021-04-23 11:04:57,077 - log - INFO - Connection Successfull!
+2021-04-23 11:04:57,078 - log - INFO - Choosen to delete record
+2021-04-23 11:04:57,080 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:04:57,081 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:04:57,081 - log - INFO - (12, 'Samuel', 100000.0)
+2021-04-23 11:05:14,224 - log - INFO - Entered: 12
+2021-04-23 11:05:14,225 - log - ERROR - Delete aborted
+2021-04-23 11:05:18,452 - log - INFO - Connection Successfull!
+2021-04-23 11:05:18,453 - log - INFO - Choosen to quit
+2021-04-23 11:06:49,313 - log - INFO - Program start
+2021-04-23 11:06:52,897 - log - INFO - Connection Successfull!
+2021-04-23 11:06:52,897 - log - INFO - Choosen to delete record
+2021-04-23 11:06:52,898 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:06:52,898 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:06:52,898 - log - INFO - (12, 'Samuel', 100000.0)
+2021-04-23 11:06:58,314 - log - INFO - Entered: 12
+2021-04-23 11:06:58,315 - log - ERROR - Delete aborted
+2021-04-23 11:07:00,159 - log - INFO - Connection Successfull!
+2021-04-23 11:07:00,159 - log - INFO - Choosen to quit
+2021-04-23 11:08:04,234 - log - INFO - Program start
+2021-04-23 11:08:10,955 - log - INFO - Connection Successfull!
+2021-04-23 11:08:10,955 - log - INFO - Choosen to delete record
+2021-04-23 11:08:11,047 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:08:11,048 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:08:11,048 - log - INFO - (12, 'Samuel', 100000.0)
+2021-04-23 11:08:16,252 - log - INFO - Entered: 12
+2021-04-23 11:08:18,202 - log - INFO - Connection Successfull!
+2021-04-23 11:08:18,202 - log - INFO - Choosen to quit
+2021-04-23 11:08:28,101 - log - INFO - Program start
+2021-04-23 11:08:32,181 - log - INFO - Connection Successfull!
+2021-04-23 11:08:32,181 - log - INFO - Choosen to retrieve records
+2021-04-23 11:08:32,183 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 11:08:32,183 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 11:08:34,145 - log - INFO - Connection Successfull!
+2021-04-23 11:08:34,145 - log - INFO - Choosen to quit

@@ -48,12 +48,13 @@ class CRUD:
         try:
             db = mysql.connector.connect(host = self.__localhost, user = self.__username,
                 passwd = self.__password, database = self.__database_name)
-        except:
-            logger.error("Connection Unsuccessfull!")
-        else:
+            
             if (db):
                 logger.info("Connection Successfull!")
             self.__db = db
+        except:
+            logger.error("Connection Unsuccessfull!")
+            
 
     def insert(self):
         '''
@@ -74,10 +75,10 @@ class CRUD:
             cursor.execute("INSERT INTO "+self.__table_name+" (name, salary) VALUES (%s,%s)", (name, salary))
 
             self.__db.commit()
+
+            logger.info("{} record inserted".format(cursor.rowcount))
         except:
             logger.error("Insert aborted")
-        else:
-            logger.info("{} record inserted".format(cursor.rowcount))
             
 
     def retrieve(self):
@@ -94,11 +95,11 @@ class CRUD:
             cursor.execute("SELECT * FROM "+self.__table_name)
 
             result = cursor.fetchall()
-        except:
-            logger.error("Retrieve aborted")
-        else:
+
             for i in result:
                 logger.info(i)
+        except:
+            logger.error("Retrieve aborted")
 
     def update(self):
         '''
@@ -120,10 +121,10 @@ class CRUD:
             cursor.execute("UPDATE "+self.__table_name+" SET name=%s, salary=%s WHERE id = %s", (name, salary, id))
 
             self.__db.commit()
+
+            logger.info("{} record updated".format(cursor.rowcount))
         except:
-            logger.error("Update aborted")
-        else:
-            logger.info("{} record updated".format(cursor.rowcount))        
+            logger.error("Update aborted")        
 
     def delete(self):
         '''
@@ -143,10 +144,10 @@ class CRUD:
             cursor.execute("DELETE FROM "+self.__table_name+" WHERE id = %s", (id))
 
             self.__db.commit()
+
+            logger.info(cursor.rowcount, "record deleted")
         except:
             logger.error("Delete aborted")
-        else:
-            logger.info(cursor.rowcount, "record deleted")
 
     def alter_table(self):
         '''

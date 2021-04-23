@@ -20,3 +20,4 @@ f_handler.setFormatter(f_format)
 
 # Add handlers to the logger
 logger.addHandler(f_handler)
+logger.setLevel(logging.INFO)

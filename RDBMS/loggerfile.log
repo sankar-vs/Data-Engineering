@@ -1,0 +1,16 @@
+2021-04-23 09:48:18,629 - log - INFO - Program start
+2021-04-23 09:48:34,335 - log - INFO - Connection Successfull!
+2021-04-23 09:48:34,335 - log - INFO - Choosen to create a new table
+2021-04-23 09:48:37,413 - log - INFO - Table to be created with id as a primary key: t
+2021-04-23 09:48:43,251 - log - INFO - Connection Successfull!
+2021-04-23 09:48:43,251 - log - INFO - Choosen to drop table
+2021-04-23 09:48:44,480 - log - INFO - Table to be deleted: t
+2021-04-23 09:48:46,764 - log - INFO - Connection Successfull!
+2021-04-23 09:48:46,765 - log - INFO - Choosen to quit
+2021-04-23 09:49:07,183 - log - INFO - Program start
+2021-04-23 09:49:14,552 - log - INFO - Connection Successfull!
+2021-04-23 09:49:14,553 - log - INFO - Choosen to retrieve records
+2021-04-23 09:49:14,646 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 09:49:14,647 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 09:49:16,755 - log - INFO - Connection Successfull!
+2021-04-23 09:49:16,756 - log - INFO - Choosen to quit

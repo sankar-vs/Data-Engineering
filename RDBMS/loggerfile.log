@@ -28,3 +28,10 @@
 2021-04-23 09:49:14,647 - log - INFO - (2, 'Sankar', 20000.0)
 2021-04-23 09:49:16,755 - log - INFO - Connection Successfull!
 2021-04-23 09:49:16,756 - log - INFO - Choosen to quit
+2021-04-23 09:53:19,237 - log - INFO - Program start
+2021-04-23 09:53:33,074 - log - INFO - Connection Successfull!
+2021-04-23 09:53:33,074 - log - INFO - Choosen to retrieve records
+2021-04-23 09:53:33,076 - log - INFO - (1, 'Selva', 15000.0)
+2021-04-23 09:53:33,076 - log - INFO - (2, 'Sankar', 20000.0)
+2021-04-23 09:53:34,513 - log - INFO - Connection Successfull!
+2021-04-23 09:53:34,514 - log - INFO - Choosen to quit

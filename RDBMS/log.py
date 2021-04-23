@@ -11,7 +11,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 # Create handlers
-f_handler = logging.FileHandler('loggerfile.log')
+f_handler = logging.FileHandler('RDBMS/loggerfile.log')
 f_handler.setLevel(logging.INFO)
 
 # Create formatters and add it to handlers

@@ -55,9 +55,9 @@ SELECT * FROM employee_payroll				 # Select Employee from Date range
 +----+---------+---------+------------+
 
 ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;	# Adding gender field
-update employee_payroll set gender = 'F' where name = 'Terisa';
-update employee_payroll set gender = 'M' where name = 'Bill' or name  = 'Charlie';
-update employee_payroll set salary = 4000000.0 where name = 'Terisa';
+UPDATE employee_payroll set gender = 'F' where name = 'Terisa';
+UPDATE employee_payroll set gender = 'M' where name = 'Bill' or name  = 'Charlie';
+UPDATE employee_payroll set salary = 4000000.0 where name = 'Terisa';
 SELECT * FROM employee_payroll;
 +----+---------+--------+---------+------------+
 | id | name    | gender | salary  | start      |

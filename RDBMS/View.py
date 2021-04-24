@@ -4,15 +4,62 @@ from log import logger
 def create_view():
     try:
         connect = CRUD() 
-        print("done1")
         cursor = connect._CRUD__db.cursor()
-        print("Done2")
-        indexName = input("Enter index name: ")
+        viewName = input("Enter view name: ")
 
-        cursor.excecute("CREATE INDEX {} ON employee_details(name, salary)".format(indexName))
-        print("Done3")
+        cursor.excecute("CREATE VIEW {} AS SELECT * FROM employee_details".format(viewName))
+    
         connect._CRUD__db.commit()
 
-        logger.info("Index Created: {}".format(indexName))
+        logger.info("View Created: {}".format(viewName))
     except:
         logger.error("Creating View Aborted")
+
+def show_view():
+    try:
+        connect = CRUD() 
+        cursor = connect._CRUD__db.cursor()
+        viewName = input("Enter view name: ")
+
+        cursor.excecute("SELECT * FROM {}".format(viewName))
+    
+        result = cursor.fetchall()
+
+        for i in result:
+            logger.info(i)
+    except:
+        logger.error("Show View Aborted")
+
+def drop_view():
+    try:
+        connect = CRUD() 
+        cursor = connect._CRUD__db.cursor()
+        viewName = input("Enter view name: ")
+
+        cursor.excecute("DROP VIEW {}".format(viewName))
+    
+        connect._CRUD__db.commit()
+
+        logger.info("View Dropped: {}".format(viewName))
+    except:
+        logger.error("Dropping View Aborted")
+
+def alter_view():
+    try:
+        connect = CRUD() 
+        cursor = connect._CRUD__db.cursor()
+        viewName = input("Enter view name: ")
+
+        cursor.excecute("CREATE OR REPLACE VIEW {} AS SELECT name, salary FROM employee_details".format(viewName))
+    
+        connect._CRUD__db.commit()
+
+        logger.info("View Altered: {}".format(viewName))
+    except:
+        logger.error("Altering View Aborted")
+
+create_view()
+show_view()
+alter_view()
+show_view()
+drop_view()

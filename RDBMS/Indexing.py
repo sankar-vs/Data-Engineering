@@ -7,7 +7,7 @@ def create_indexing():
         cursor = connect._CRUD__db.cursor()
         indexName = input("Enter index name: ")
 
-        cursor.excecute("CREATE INDEX {} ON employee_details(name, salary)".format(indexName))
+        cursor.execute("CREATE INDEX {} ON employee_details(name, salary)".format(indexName))
 
         connect._CRUD__db.commit()
 
@@ -21,7 +21,7 @@ def drop_indexing():
         cursor = connect._CRUD__db.cursor()
         indexName = input("Enter index name: ")
 
-        cursor.excecute("DROP INDEX {} ON employee_details".format(indexName))
+        cursor.execute("DROP INDEX {} ON employee_details".format(indexName))
 
         connect._CRUD__db.commit()
 
@@ -36,7 +36,7 @@ def search_by_name():
 
         name = input("Enter name: ")
 
-        cursor.excecute("SELECT * FROM employee_details WHERE name = {}".format(name))
+        cursor.execute("SELECT * FROM employee_details WHERE name = {}".format(name))
 
         result = cursor.fetchall()
 

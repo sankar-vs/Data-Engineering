@@ -34,7 +34,7 @@ class CRUD:
         self.__password = config('DB_PASSWORD')
         self.__database_name = config('DB_NAME')
         self.__table_name = config('DB_TABLENAME')
-        self.__db = self.createConnection()
+        self.createConnection()
 
     def createConnection(self):
         '''
@@ -51,7 +51,8 @@ class CRUD:
             
             if (db):
                 logger.info("Connection Successfull!")
-            return db
+                
+            self.__db = db
         except:
             logger.error("Connection Unsuccessfull!")
             

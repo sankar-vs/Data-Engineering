@@ -7,7 +7,7 @@ def create_view():
         cursor = connect._CRUD__db.cursor()
         viewName = input("Enter view name: ")
 
-        cursor.excecute("CREATE VIEW {} AS SELECT * FROM employee_details".format(viewName))
+        cursor.execute("CREATE VIEW {} AS SELECT * FROM employee_details".format(viewName))
     
         connect._CRUD__db.commit()
 
@@ -21,7 +21,7 @@ def show_view():
         cursor = connect._CRUD__db.cursor()
         viewName = input("Enter view name: ")
 
-        cursor.excecute("SELECT * FROM {}".format(viewName))
+        cursor.execute("SELECT * FROM {}".format(viewName))
     
         result = cursor.fetchall()
 
@@ -36,7 +36,7 @@ def drop_view():
         cursor = connect._CRUD__db.cursor()
         viewName = input("Enter view name: ")
 
-        cursor.excecute("DROP VIEW {}".format(viewName))
+        cursor.execute("DROP VIEW {}".format(viewName))
     
         connect._CRUD__db.commit()
 
@@ -50,16 +50,10 @@ def alter_view():
         cursor = connect._CRUD__db.cursor()
         viewName = input("Enter view name: ")
 
-        cursor.excecute("CREATE OR REPLACE VIEW {} AS SELECT name, salary FROM employee_details".format(viewName))
+        cursor.execute("CREATE OR REPLACE VIEW {} AS SELECT name, salary FROM employee_details".format(viewName))
     
         connect._CRUD__db.commit()
 
         logger.info("View Altered: {}".format(viewName))
     except:
         logger.error("Altering View Aborted")
-
-create_view()
-show_view()
-alter_view()
-show_view()
-drop_view()

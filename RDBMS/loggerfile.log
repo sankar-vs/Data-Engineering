@@ -166,3 +166,37 @@
 2021-04-23 11:08:32,183 - log - INFO - (2, 'Sankar', 20000.0)
 2021-04-23 11:08:34,145 - log - INFO - Connection Successfull!
 2021-04-23 11:08:34,145 - log - INFO - Choosen to quit
+2021-04-24 13:25:10,218 - log - INFO - Connection Successfull!
+2021-04-24 13:25:14,443 - log - ERROR - Retrieve by data Aborted
+2021-04-24 13:25:41,021 - log - INFO - Connection Successfull!
+2021-04-24 13:25:44,754 - log - ERROR - Retrieve by data Aborted
+Traceback (most recent call last):
+  File "e:/Practice/Data_Engineering/RDBMS/Indexing.py", line 39, in search_by_name
+    cursor.excecute("SELECT * FROM employee_details WHERE name = {}".format(name))
+AttributeError: 'MySQLCursor' object has no attribute 'excecute'
+2021-04-24 13:26:16,683 - log - INFO - Connection Successfull!
+2021-04-24 13:26:21,923 - log - ERROR - Retrieve by data Aborted
+Traceback (most recent call last):
+  File "e:/Practice/Data_Engineering/RDBMS/Indexing.py", line 39, in search_by_name
+    cursor.execute("SELECT * FROM employee_details WHERE name = {}".format(name))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\cursor.py", line 569, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\connection.py", line 598, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\connection.py", line 486, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'Sankar' in 'where clause'
+2021-04-24 13:27:21,318 - log - INFO - Connection Successfull!
+2021-04-24 13:27:23,515 - log - ERROR - Retrieve by data Aborted
+Traceback (most recent call last):
+  File "e:/Practice/Data_Engineering/RDBMS/Indexing.py", line 39, in search_by_name
+    cursor.execute("SELECT * FROM employee_details WHERE name = Sankar".format(name))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\cursor.py", line 569, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\connection.py", line 598, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "C:\Users\vssan\AppData\Local\Programs\Python\Python38-32\lib\site-packages\mysql\connector\connection.py", line 486, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'Sankar' in 'where clause'
+2021-04-24 13:29:20,737 - log - INFO - Connection Successfull!
+2021-04-24 13:29:23,178 - log - INFO - (2, 'Sankar', 20000.0)

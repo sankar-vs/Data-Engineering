@@ -68,10 +68,26 @@ class StoredProcedures():
         except:
             logger.exception("Show Procedure Aborted")
 
+    def call_display_students_by_limit(self):
+        try: 
+            cursor = self.connect._CRUD__db.cursor()
+
+            result_arg = cursor.callproc('display_students_by_limit',[1,5,92])
+            
+            for result in cursor.stored_results():
+                for i in result.fetchall():
+                    logger.info(i)
+
+            logger.info(result_arg[2])
+
+        except:
+            logger.exception("Show Procedure Aborted")
+
 procedure = StoredProcedures()
 # procedure.call_get_merit_student()
 # procedure.call_get_student_by_limit()
 # procedure.call_max_display_marks()
 # procedure.call_display_marks()
-procedure.show_stored_procedures()
+# procedure.show_stored_procedures()
+procedure.call_display_students_by_limit()
     

@@ -1,7 +1,22 @@
+'''
+@Author: Sankar
+@Date: 2021-04-24 06:46:25
+@Last Modified by: Sankar
+@Last Modified time: 2021-04-26 11:05:09
+@Title : View in MySQL
+'''
 from SQL_Connect import CRUD
 from log import logger
 
 def create_view():
+    '''
+    Description:
+        Create a view in MySQL
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
@@ -16,6 +31,14 @@ def create_view():
         logger.error("Creating View Aborted")
 
 def show_view():
+    '''
+    Description:
+        Show View
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
@@ -31,6 +54,14 @@ def show_view():
         logger.error("Show View Aborted")
 
 def drop_view():
+    '''
+    Description:
+        Drop View
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
@@ -45,6 +76,14 @@ def drop_view():
         logger.error("Dropping View Aborted")
 
 def alter_view():
+    '''
+    Description:
+        Alter View
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()

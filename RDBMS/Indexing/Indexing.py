@@ -1,7 +1,22 @@
+'''
+@Author: Sankar
+@Date: 2021-04-24 08:46:25
+@Last Modified by: Sankar
+@Last Modified time: 2021-04-24 09:38:09
+@Title : Indexing
+'''
 from SQL_Connect import CRUD
 from log import logger
 
 def create_indexing():
+    '''
+    Description:
+        To Create a Index in MySQL
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
@@ -16,6 +31,14 @@ def create_indexing():
         logger.error("Creating Index Aborted")
 
 def drop_indexing():
+    '''
+    Description:
+        To Drop a Index in MySQL
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
@@ -30,13 +53,21 @@ def drop_indexing():
         logger.error("Dropping Index Aborted")
 
 def search_by_name():
+    '''
+    Description:
+        To Search by name in MySQL
+    Parameter:
+        None
+    Return:
+        None
+    '''
     try:
         connect = CRUD() 
         cursor = connect._CRUD__db.cursor()
 
         name = input("Enter name: ")
 
-        cursor.execute("SELECT * FROM employee_details WHERE name = {}".format(name))
+        cursor.execute("SELECT * FROM employee_details WHERE name = '{}'".format(name))
 
         result = cursor.fetchall()
 
@@ -44,7 +75,3 @@ def search_by_name():
             logger.info(i)
     except:
         logger.error("Retrieve by data Aborted")
-
-create_indexing()
-search_by_name()
-drop_indexing()

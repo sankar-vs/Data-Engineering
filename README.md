@@ -1,5 +1,4 @@
 ## Python Practice
-<<<<<<< HEAD
 ### Basic Python Programs
 ### Functional Programs
 ### Logical Programs
@@ -7,3 +6,4 @@
 #### Perform testing using pytest
 ### OOPS Programs
 ### Data Structures
+### Numpy

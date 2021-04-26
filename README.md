@@ -1,5 +1,4 @@
 ## Python Practice
-<<<<<<< HEAD
 ### Basic Python Programs
 ### Functional Programs
 ### Logical Programs
@@ -12,7 +11,5 @@
 ### Matplotlib
 ### Matplotlib Barchart
 ### Matplotlib Piechart
-
-=======
 ### Matplotlib Scatterplot
->>>>>>> Matplotlib_Scatterplot
+### Seaborn

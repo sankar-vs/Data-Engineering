@@ -1,0 +1,22 @@
+{
+    "pulses": [
+        {
+            "name": "Sugar",
+            "weight": 6,
+            "pricePerKg": 100,
+            "total": 600
+        },
+        {
+            "name": "Rice",
+            "weight": 5,
+            "pricePerKg": 90,
+            "total": 450
+        },
+        {
+            "name": "GramDhal",
+            "weight": 20,
+            "pricePerKg": 200,
+            "total": 4000
+        }
+    ]
+}

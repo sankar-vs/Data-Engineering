@@ -1,0 +1,34 @@
+{
+    "doctor": [
+        {
+            "name": "Sam",
+            "id": 1,
+            "patientList": [1, 2],
+            "availability": "AM"
+        },
+        {
+            "name": "Anand",
+            "id": 2,
+            "patientList": [1],
+            "availability": "PM"
+        },
+        {
+            "name": "Shwetha",
+            "id": 3,
+            "patientList": [1, 2, 3],
+            "availability": "BOTH"
+        },
+        {
+            "name": "Devi",
+            "id": 4,
+            "patientList": [1],
+            "availability": "AM"
+        },
+        {
+            "name": "Yamini",
+            "id": 5,
+            "patientList": [1],
+            "availability": "PM"
+        }
+    ]
+}

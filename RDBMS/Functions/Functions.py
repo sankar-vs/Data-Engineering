@@ -281,7 +281,7 @@ class StringFunctions():
                           "SELECT RIGHT('foobarbar', 4)", 
                           "SELECT RPAD('hi',5,'?')",
                           "SELECT SUBSTRING('Quadratically',5,6)",
-                          "SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2"]
+                          "SELECT SUBSTRING_INDEX('www.mysql.com', '.', 2)"]
             
             for i in statements:
                 cursor.execute(i)

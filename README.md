@@ -8,3 +8,4 @@
 ### Data Structures
 ### Numpy
 ### Pandas
+### Matplotlib

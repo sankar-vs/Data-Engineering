@@ -4,3 +4,4 @@ src/__pycache__
 test/__pycache__
 test/.pytest_cache
 **/logfile.log
+**/Logical Programs

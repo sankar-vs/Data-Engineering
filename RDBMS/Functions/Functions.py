@@ -30,7 +30,7 @@ class AggregateFunctions():
         try: 
             cursor = self.connect._CRUD__db.cursor()
 
-            cursor.execute('SELECT COUNT(*) AS Students_count FROM student_info')
+            cursor.execute('SELECT subject,COUNT(*) AS Subject_Count FROM student_info group by subject order by Subject_count')
 
             result = cursor.fetchall()
 
@@ -43,7 +43,7 @@ class AggregateFunctions():
         try: 
             cursor = self.connect._CRUD__db.cursor()
 
-            cursor.execute('SELECT SUM(marks) FROM student_info')
+            cursor.execute('SELECT subject,SUM(marks) AS Total_marks FROM student_info group by subject order by Total_marks DESC')
 
             result = cursor.fetchall()
 
@@ -56,7 +56,7 @@ class AggregateFunctions():
         try: 
             cursor = self.connect._CRUD__db.cursor()
 
-            cursor.execute('SELECT stud_name,MIN(marks) FROM student_info')
+            cursor.execute('SELECT subject,MIN(marks) AS min_marks FROM student_info group by subject order by min_marks')
 
             result = cursor.fetchall()
 
@@ -69,7 +69,7 @@ class AggregateFunctions():
         try: 
             cursor = self.connect._CRUD__db.cursor()
 
-            cursor.execute('SELECT stud_name,MAX(marks) FROM student_info')
+            cursor.execute('SELECT subject,MAX(marks) AS max_marks FROM student_info group by subject order by max_marks;')
 
             result = cursor.fetchall()
 
@@ -82,7 +82,7 @@ class AggregateFunctions():
         try: 
             cursor = self.connect._CRUD__db.cursor()
 
-            cursor.execute('SELECT AVG(marks) FROM student_info')
+            cursor.execute('SELECT subject,AVG(marks) AS avg_marks FROM student_info group by subject order by avg_marks;')
 
             result = cursor.fetchall()
 
